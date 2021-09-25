@@ -24,6 +24,7 @@ class CreateFlightsTable extends Migration
             $table->string('dest_time');
             $table->string('duration');
             $table->bigInteger('ticket_id');
+            $table->decimal('price', $precision=8, $scale=2);
             $table->timestamps();
         });
     }
