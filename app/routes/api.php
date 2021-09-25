@@ -8,6 +8,8 @@ use App\Http\Controllers\FlightController;
 use App\Http\Controllers\AirportController;
 use App\Http\Controllers\AirlineController;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,5 +65,13 @@ Route::post('/airline-update/{id}', [AirlineController::class, 'update']);
 
 Route::post('/ticket-create', [TicketController::class, 'store']);
 Route::get('/ticket/{id}', [TicketController::class, 'show']);
+
+
+Route::get('/customers', [CustomerController::class, 'index']);
+Route::post('/customer', [CustomerController::class, 'store']);
+Route::post('/customer-delete/{id}', [CustomerController::class, 'destroy']);
+
+Route::post('/admin', [AdminController::class, 'store']);
+Route::post('/admin-update/{id}', [AdminController::class, 'update']);
 
 
