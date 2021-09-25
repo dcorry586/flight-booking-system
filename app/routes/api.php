@@ -43,3 +43,7 @@ Route::get('/flights-by-departure-time/{departureTime}', [FlightController::clas
 Route::get('/flights-by-departure-date/{departureDate}', [FlightController::class, 'indexByFlightDepartureDate']);
 Route::get('/flights-by-seats-remaining/{seatingAvailable}', [FlightController::class, 'indexByFlightSeatingRemaining']);
 Route::get('/flights-by-price/{price}', [FlightController::class, 'indexByFlightPrice']);
+Route::get('/flights-by-duration/{duration}', [FlightController::class, 'indexByFlightDuration']);
+Route::post('/flight', [FlightController::class, 'store']);
+Route::post('/flight-update/{id}', [FlightController::class, 'update']);
+Route::post('/flight-delete/{id}', [FlightController::class, 'destroy']);

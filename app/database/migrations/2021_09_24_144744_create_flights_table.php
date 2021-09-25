@@ -16,15 +16,15 @@ class CreateFlightsTable extends Migration
         Schema::create('flights', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('capacity');
-            $table->bigInteger('dest_airport'); // airport id
-            $table->bigInteger('depart_airport'); // airport id --> malaga international --> get them to enter id in view and have side by side name and id
+            $table->bigInteger('dest_airport')->default(0); // airport id
+            $table->bigInteger('depart_airport')->default(0); // airport id --> malaga international --> get them to enter id in view and have side by side name and id
             $table->string('depart_date');
             $table->string('dest_date');
             $table->string('depart_time');
             $table->string('dest_time');
             $table->string('duration');
-            $table->bigInteger('ticket_id');
-            $table->decimal('price', $precision=8, $scale=2);
+            $table->bigInteger('ticket_id')->default(0);
+            $table->decimal('price', $precision=8, $scale=2)->default(00.00);
             $table->timestamps();
         });
     }
