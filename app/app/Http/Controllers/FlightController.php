@@ -8,6 +8,17 @@ use Log;
 
 class FlightController extends Controller
 {
+
+    public function create() {
+            // return view
+    }
+    
+    public function edit() {
+            
+    }
+    
+        
+
     public function indexByFlightName($name) {
         $flights = Flight::where('flight_name', $name)->get();
         return $flights;
