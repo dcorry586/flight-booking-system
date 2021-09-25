@@ -16,13 +16,13 @@ class CreateBookingsTable extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->string('ticket_id');
-            $table->bigInteger('customer_id');
-            $table->date('date');
+            $table->bigInteger('customer_id')->default();
+            $table->string('flight_date');
             $table->string('duration');
-            $table->time('time_depart');
-            $table->time('time_arrive');
+            $table->string('time_depart');
+            $table->string('time_arrive');
             $table->string('flight_id');
-            $table->bigInteger('pay_id');
+            $table->bigInteger('pay_id')->default(0);
             $table->timestamps();
         });
     }

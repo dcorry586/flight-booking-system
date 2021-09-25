@@ -19,7 +19,7 @@ class CreateAdminsTable extends Migration
             $table->string('password');
             $table->string('address');
             $table->string('mobile');
-            $table->bigInteger('airline_id');
+            $table->bigInteger('airline_id'); // make 0 : for scalability 
             $table->string('fname');
             $table->string('lname');
             $table->timestamps();
