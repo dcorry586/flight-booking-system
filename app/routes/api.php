@@ -39,9 +39,6 @@ Route::resource('payment', PaymentController::class);
 Route::resource('airport', AirportController::class);
 Route::resource('airline', AirlineController::class);
 
-Route::post('/payment', [PaymentController::class, 'store']);
-Route::get('/payments', [PaymentController::class, 'create']);
-
 
 Route::get('/flights-by-name/{name}', [FlightController::class, 'indexByFlightName']);
 Route::get('/flights-by-departure/{departure}', [FlightController::class, 'indexByFlightDeparture']);
@@ -73,5 +70,7 @@ Route::post('/customer-delete/{id}', [CustomerController::class, 'destroy']);
 
 Route::post('/admin', [AdminController::class, 'store']);
 Route::post('/admin-update/{id}', [AdminController::class, 'update']);
+
+Route::post('/payment', [PaymentController::class, 'store']);
 
 

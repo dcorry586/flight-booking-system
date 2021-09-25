@@ -18,7 +18,7 @@ class PaymentController extends Controller
             $payment = new Payment;
 
 
-            $payment->$request = $request->input('customer_id');
+            $payment->customer_id = $request->input('customer_id');
             $payment->booking_id = $request->input('booking_id');
             $payment->account_number = $request->input('account_number');
             $payment->card_number = $request->input('card_number');
