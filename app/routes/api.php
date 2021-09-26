@@ -74,3 +74,6 @@ Route::post('/admin-update/{id}', [AdminController::class, 'update']);
 Route::post('/payment', [PaymentController::class, 'store']);
 
 
+Route::get('/flights/search/{name}', [FlightController::class, 'store']);
+
+

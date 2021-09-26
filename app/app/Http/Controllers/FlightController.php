@@ -17,7 +17,9 @@ class FlightController extends Controller
             
     }
     
-        
+    public function search($name) {
+        return Flght::where('flight_name', 'like, ', '%' .$name. '%')->get();
+    }    
 
     public function indexByFlightName($name) {
         $flights = Flight::where('flight_name', $name)->get();
